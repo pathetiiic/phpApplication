@@ -5,7 +5,7 @@
 
   class Router
   {
-    private static array $list = []; #список всех урлов на сайте
+    private static $list = []; #список всех урлов на сайте
   
     /**
      * Метод регистрирует роут для обычной страницы
