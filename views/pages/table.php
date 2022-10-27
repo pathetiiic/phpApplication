@@ -28,12 +28,12 @@
   </tr>
   </thead>
   <tbody>
-  <?php foreach ($_SESSION['articles'] as $article) {?>
+  <?php foreach ($_SESSION['articles'] as $articles) {?>
   <tr>
-    <th scope="row"><?= $article['id'] ?></th>
-    <td><?= $article['title'] ?></td>
-    <td><?= $article['about'] ?></td>
-    <td><?= $article['id'] ?></td>
+    <th scope="row"><?= $articles['id'] ?></th>
+    <td><?= $articles['title'] ?></td>
+    <td><?= $articles['about'] ?></td>
+    <td><?= $articles['id'] ?></td>
     
     <td>
       <form method="post" action="/auth/delete">

@@ -90,17 +90,24 @@
       }
       
       $articles = \R::findAll('articles', 'ORDER BY id');
+      
       foreach ($articles as $item){
-        $_SESSION['articles'] = [
+        $_SESSION['articles'][] = [
           'id' => $item->id,
           'title' => $item->title,
           'about' => $item->about,
           'articlePic' => $item->articlePic
         ];
-        // todo: сделать вывод
       }
       Router::redirect('/articles');
     }
+    
+//    public function delete(): void {
+//      $del = \R::findOne('articles', $_SESSION['articles']['id']);
+//      \R::trash($del);
+//      unset($_SESSION['articles']);
+//      Router::redirect('/articles');
+//    }
     
     public function logout(): void
     {

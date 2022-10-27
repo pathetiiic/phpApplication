@@ -1,9 +1,7 @@
 <?php
   use App\Services\Page;
   
-  if ($_SESSION['user'] && $_SESSION['user']['group'] != 2) {
-    \App\Services\Router::redirect('/profile');
-  }
+  
 ?>
   
   <!doctype html>
@@ -17,12 +15,14 @@
   Page::part('navbar');
 ?>
     <div class="d-flex flex-wrap">
+        <?php foreach ($_SESSION['articles'] as $article) {?>
   <div class="container border-1 p-2 d-block mt-4">
-    <img src="<?= $_SESSION['articles']['articlePic'] ?>" class="img-fluid" alt="...">
-    <h1><?= $_SESSION['articles']['title'] ?></h1>
-    <p><?= $_SESSION['articles']['about'] ?></p>
-    <p><?= var_dump($_SESSION['articles']) ?></p>
+    <img src="<?= $article['articlePic'] ?>" class="img-fluid" alt="...">
+    <h1><?= $article['title'] ?></h1>
+    <p><?= $article['about'] ?></p>
   </div>
+        <?php } ?>
     </div>
+  
 </body>
 </html>
