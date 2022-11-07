@@ -19,7 +19,7 @@
 
 <div class="container">
     <h2 class="mt-4">Добавить запись</h2>
-    <form action="/auth/admin" method="post" enctype="multipart/form-data" class="mt-4">
+    <form action="/editing/admin" method="post" enctype="multipart/form-data" class="mt-4">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input name="title" type="text" class="form-control" id="exampleInputEmail1">

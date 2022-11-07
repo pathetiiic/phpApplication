@@ -36,7 +36,7 @@
     <td><?= $articles['id'] ?></td>
     
     <td>
-      <form method="post" action="/auth/delete">
+      <form method="post" action="/editing/delete">
         <button class="btn btn-danger" type="submit">Удалить</button>
       </form>
     </td>

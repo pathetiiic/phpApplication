@@ -2,6 +2,7 @@
 
   use App\Services\Router;
   use App\Controllers\Auth;
+  use App\Controllers\Editing;
   
   Router::page('/', 'home');
   Router::page('/login', 'login');
@@ -12,9 +13,10 @@
   Router::page('/table', 'table');
   
   Router::post('/auth/register', Auth::class, 'register', true, true);
-  Router::post('/auth/admin', Auth::class, 'admin', true, true);
+  Router::post('/editing/admin', Editing::class, 'admin', true, true);
   Router::post('/auth/login', Auth::class, 'login', true);
-//  Router::post('/auth/delete', Auth::class, 'delete');
+  Router::post('/editing/delete', Editing::class, 'delete');
+  Router::post('/editing/addToFavorite', Editing::class, 'addToFavorite');
   Router::post('/auth/logout', Auth::class, 'logout');
   
   Router::enable();

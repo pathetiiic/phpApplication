@@ -16,11 +16,16 @@
 ?>
     <div class="d-flex flex-wrap">
         <?php foreach ($_SESSION['articles'] as $article) {?>
-  <div class="container border-1 p-2 d-block mt-4">
-    <img src="<?= $article['articlePic'] ?>" class="img-fluid" alt="...">
-    <h1><?= $article['title'] ?></h1>
-    <p><?= $article['about'] ?></p>
-  </div>
+					<div class="card m-2" style="width: 18rem;">
+						<img src="<?= $article['articlePic'] ?>" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title"><?= $article['title'] ?></h5>
+							<p class="card-text"><?= $article['about'] ?></p>
+							<form action="/editing/addToFavorite" method="post">
+								<button class="btn btn-primary">Добавить в избранное</button>
+							</form>
+						</div>
+					</div>
         <?php } ?>
     </div>
   
